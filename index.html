@@ -444,7 +444,7 @@ function openModal(){
             <label>FOTO</label>
             <label class="photo-picker" id="photoPicker">
               <span id="photoHint">Tocá para sacar o elegir una foto</span>
-              <input type="file" accept="image/*" capture="environment" id="photoInput">
+              <input type="file" accept="image/*" id="photoInput">
             </label>
           </div>
         </div>
@@ -505,7 +505,7 @@ function openModal(){
     if(!file) return;
     const dataUrl = await resizeImage(file);
     pickedImage = { dataUrl };
-    document.getElementById('photoPicker').innerHTML = `<img src="${dataUrl}"><input type="file" accept="image/*" capture="environment" id="photoInput2">`;
+    document.getElementById('photoPicker').innerHTML = `<img src="${dataUrl}"><input type="file" accept="image/*" id="photoInput2">`;
     document.getElementById('photoInput2').addEventListener('change', async (ev2)=>{
       const f2 = ev2.target.files[0];
       if(!f2) return;
